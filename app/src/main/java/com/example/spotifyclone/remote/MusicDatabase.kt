@@ -16,7 +16,7 @@ class MusicDatabase {
         return listOf(
             BKMediaTrack("0", "Title One", "Artist One", url1, artist),
             BKMediaTrack("1", "Title Two", "Artist Two", url2, artist),
-            BKMediaTrack("2", "Title Three", "Artist Three", url3, artist,),
+            BKMediaTrack("2", "Title Three", "Artist Three", url3, artist),
             BKMediaTrack("3", "Title Four", "Artist Four", url4, artist),
             BKMediaTrack("4", "Title Five", "Artist Five", url5, artist),
             BKMediaTrack("5", "Title Six", "Artist Six", url6, artist),

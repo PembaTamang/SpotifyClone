@@ -14,7 +14,7 @@ import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 
 class MusicPlaybackPreparer (
     private val firebaseMusicSource: FirebaseMusicSource,
-    private val playerPrepared:(MediaMetadataCompat?)->Unit,
+    private val preparePlayer:(MediaMetadataCompat?)->Unit,
         ):MediaSessionConnector.PlaybackPreparer{
     override fun onCommand(
         player: Player,
@@ -34,7 +34,8 @@ class MusicPlaybackPreparer (
         firebaseMusicSource.whenReady {
             Log.d(TAG, "onPrepareFromMediaId: ready")
            val itemToPlay: MediaMetadataCompat? = firebaseMusicSource.songs.find { mediaId == it.description.mediaId }
-            playerPrepared(itemToPlay)
+            Log.d(TAG, "onPrepareFromMediaId: ${itemToPlay!!.description.mediaId}")
+            preparePlayer(itemToPlay)
         }
     }
 
